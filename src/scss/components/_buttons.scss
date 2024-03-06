@@ -1,0 +1,23 @@
+@use 'helpers' as *;
+
+.theme-button{
+    border-radius: 0;
+    font-family: $cta_font;
+    font-weight: 600;
+    display: inline-block;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color .3s, background .3s, border .3s;
+    cursor: pointer;
+    @include defaultButton;
+    @include button(map-get($colors, 'blue'), white, 1px solid map-get($colors, 'blue'), transparent, map-get($colors, 'blue'), 1px solid map-get($colors, 'blue'));
+
+    &.sm-button{
+        @include smButton;
+    }
+
+    &.secondary{
+        @include button(map-get($colors, 'light-blue'), white, 1px solid map-get($colors, 'light-blue'), transparent, map-get($colors, 'light-blue'), 1px solid map-get($colors, 'light-blue'));
+    }
+}

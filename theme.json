@@ -1,0 +1,102 @@
+{
+    "version": "1",
+    "settings": {
+        "typography": {
+            "customFontSize": false,
+            "fontSizes": [],
+            "fontWeight": false,
+            "fontStyle": false,
+            "textTransform": false,
+            "textDecoration": false,
+            "letterSpacing": false
+        },
+        "color": {
+            "defaultPalette": false,
+            "custom": false,
+            "background": false,
+            "defaultGradients": false,
+            "customGradient": false,
+            "palette": [
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#FFFFFF"
+                },
+                {
+                    "name": "Light Grey",
+                    "slug": "light-grey",
+                    "color": "#DDDDDD"
+                },
+                {
+                    "name": "Grey",
+                    "slug": "grey",
+                    "color": "#808080"
+                },
+                {
+                    "name": "Dark",
+                    "slug": "dark",
+                    "color": "#212121"
+                },
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "#000000"
+                },
+                {
+                    "name": "Blue",
+                    "slug": "blue",
+                    "color": "#004E89"
+                },
+                {
+                    "name": "Light Blue",
+                    "slug": "light-blue",
+                    "color": "#6da8d4"
+                }
+            ]
+        },
+        "blocks": {
+            "core/paragraph": {
+                "typography": {
+                    "fontSizes": [
+                        {
+                            "slug": "small",
+                            "size": "1rem",
+                            "name": "Small"
+                        },
+                        {
+                            "slug": "default",
+                            "size": "1.125rem",
+                            "name": "Default"
+                        },
+                        {
+                            "slug": "large",
+                            "size": "1.25rem",
+                            "name": "Large"
+                        }
+                    ]
+                }
+            },
+            "core/list": {
+                "typography": {
+                    "fontSizes": [
+                        {
+                            "slug": "small",
+                            "size": "1rem",
+                            "name": "Small"
+                        },
+                        {
+                            "slug": "default",
+                            "size": "1.125rem",
+                            "name": "Default"
+                        },
+                        {
+                            "slug": "large",
+                            "size": "1.25rem",
+                            "name": "Large"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use 'helpers' as *;
+
+.content-container{
+    max-width: $site_container_width;
+    width: 100%;
+    margin: 0 auto;
+    @include minBreakpoint('xl'){max-width: $site_container_width_xl;}
+}
+
+@each $color, $value in $colors{
+    .bg-#{$color}{
+        background-color: $value !important;
+    }
+}

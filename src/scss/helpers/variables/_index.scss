@@ -1,0 +1,30 @@
+@forward 'buttons';
+@forward 'colors';
+@forward 'spacing';
+@forward 'typography';
+
+//Site Content Containers
+$site_container_width: 80rem;
+$site_container_width_xl: 80rem;
+
+//Media breakpoints used in mixins, 
+$minBreakpoints : (
+    'xs' : 36rem,
+    'sm' : 48rem,
+    'md' : 64.0625rem,
+    'lg' : 80rem,
+    'xl' : 1921px
+);
+
+//Header Logo
+$logoSizes : (
+    'mobile': 12.5rem,
+    'sm' : 15rem,
+    'lg' : 18.75rem,
+);
+
+//Mobile Menu Logo
+$mmLogoSizes : (
+    'mobile' : 15rem,
+    'sm' : 17.5rem
+);

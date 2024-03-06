@@ -1,0 +1,278 @@
+@use 'helpers' as *;
+
+*{box-sizing: border-box;}
+
+.editor-styles-wrapper{  
+    @import 'base/typography';
+    @import 'components';
+    @import 'layout';
+    @import 'blocks';
+    @include containerXPad(true);
+
+    .block-editor-block-list__layout{
+        font-family: $body_font;
+        font-size: $body_font_size;
+        line-height: $body_font_line_height;
+    }
+
+    p{
+        font-family: $body_font;
+        font-size: $body_font_size;
+        line-height: $body_font_line_height;
+    }
+
+    h1.editor-post-title{
+        font-size: 3rem;
+        margin: 2rem 0 !important;
+    }
+
+    img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .acf-block-body .acf-block-preview{
+        min-height: 3rem;
+    }
+
+    .theme-button,
+    .full-link,
+    .block-image-gallery > a,
+    iframe,
+    video{
+        pointer-events: none;
+    }
+
+    .block-list-appender{
+        z-index: 9 !important;
+    }
+}
+
+.admin-block-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    background: #F2F2F2;
+    border: 1px solid #CCC;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+    color: #000;
+    font-size: .625rem;
+    line-height: 1;
+    z-index: 999;
+}
+
+.block-spacer{
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:after{
+        content: "SPACER";
+    }
+}
+
+.wp-block{
+    margin-bottom: 0 !important;
+    max-width: 100%;
+}
+
+.block-section{
+    border: 1px solid lightblue;
+    min-height: 3rem;
+
+    .custom-content-row{
+        margin: 0;
+        position: relative;
+    }
+
+    .wp-block:not(:first-child){
+
+        &.wp-block-acf-column{
+            margin: 0 !important;
+        }
+    }
+
+    .block-wrapper{
+        padding-top: 3rem !important;
+        border: 1px solid lightgreen;
+    }
+}
+
+.wp-block-heading:not(:first-child),
+.wp-block-list:not(:first-child),
+.wp-block-paragraph:not(:first-child),
+.wp-block[data-type="gravityforms/form"]:not(:first-child){
+    margin-top: 1.5rem;
+}
+
+//Space Above for admin area to exclude first child
+.acf-innerblocks-container{
+    & > .wp-block:first-child{
+        margin-top: 0 !important;
+    }
+    & > .wp-block:not(:first-child){
+        & > .mt-xs{
+            @each $size, $val in $spaceXS{
+                @if $size == 'mobile'{
+                    margin-top: $val !important;
+                }
+                @else{
+                    @include minBreakpoint($size){margin-top: $val !important;}
+                }
+            }
+        }
+        & > .mt-sm{
+            @each $size, $val in $spaceSM{
+                @if $size == 'mobile'{
+                    margin-top: $val !important;
+                }
+                @else{
+                    @include minBreakpoint($size){margin-top: $val !important;}
+                }
+            }
+        }
+        & > .mt-md{
+            @each $size, $val in $spaceMD{
+                @if $size == 'mobile'{
+                    margin-top: $val !important;
+                }
+                @else{
+                    @include minBreakpoint($size){margin-top: $val !important;}
+                }
+            }
+        }
+        & > .mt-lg{
+            @each $size, $val in $spaceLG{
+                @if $size == 'mobile'{
+                    margin-top: $val !important;
+                }
+                @else{
+                    @include minBreakpoint($size){margin-top: $val !important;}
+                }
+            }
+        }
+        & > .mt-xl{
+            @each $size, $val in $spaceXL{
+                @if $size == 'mobile'{
+                    margin-top: $val !important;
+                }
+                @else{
+                    @include minBreakpoint($size){margin-top: $val !important;}
+                }
+            }
+        }
+    }
+}
+
+//Custom sidebar width for easer field editing
+.interface-complementary-area{
+    @include minBreakpoint('sm'){width: 350px;}
+    @include minBreakpoint('md'){width: 450px;} 
+}
+
+.block-columns-row{
+    display: block !important;
+    width: 100% !important;
+    padding-top: 2.5rem;
+    border: 1px solid lavender;
+
+    & > .block-editor-block-list__layout{
+        display: grid;
+        grid-template-columns: 1fr;
+
+        & > div[data-type="acf/column"],
+        .wp-block-acf-slide{
+            border: 1px solid lightcoral;
+            width: 100%;
+            padding-top: 3.5rem;
+        }
+    }
+
+    .wp-block-acf-slide{
+        border: 1px solid lightcoral;
+        width: 100%;
+        padding-top: 3.5rem;
+    }
+
+    &.ai-center > .block-editor-block-list__layout{
+        align-items: center;
+    }
+
+    &.ai-end > .block-editor-block-list__layout{
+        align-items: end;
+    }
+
+    &.ai-stretch > .block-editor-block-list__layout{
+        align-items: stretch;
+
+        .acf-block-body,
+        .acf-block-body > div:not(.admin-block-label),
+        .acf-block-preview,
+        .block-column{
+            height: 100%;
+        }
+    }
+
+    &.gap-xs > .block-editor-block-list__layout{
+        @include columnGap($gapXS);
+    }
+
+    &.gap-sm > .block-editor-block-list__layout{
+         @include columnGap($gapSM);
+    }
+
+    &.gap-md > .block-editor-block-list__layout{
+         @include columnGap($gapMD);
+    }
+
+    &.gap-lg > .block-editor-block-list__layout{
+         @include columnGap($gapLG);
+    }
+
+    &.gap-xl > .block-editor-block-list__layout{
+         @include columnGap($gapXL);
+    }
+
+    &.cols-2 > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr));}
+    }
+
+    &.cols-2.third > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);}
+    }
+
+    &.cols-2.two_thirds > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: minmax(0, 2fr) minmax(0, 1fr)}
+    }
+
+    &.cols-2.forty > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);}
+    }
+
+    &.cols-2.sixty > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: minmax(0, 6fr) minmax(0, 4fr)}
+    }
+
+    &.cols-3 > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(3, minmax(0, 1fr));}
+    }
+
+    &.cols-4 > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr));}
+        @include minBreakpoint('md'){grid-template-columns: repeat(4, minmax(0, 1fr));}
+    }
+    &.cols-5 > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(3, minmax(0, 1fr));}
+        @include minBreakpoint('md'){grid-template-columns: repeat(5, minmax(0, 1fr));}
+    }
+    &.cols-6 > .block-editor-block-list__layout{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(3, minmax(0, 1fr));}
+        @include minBreakpoint('md'){grid-template-columns: repeat(6, minmax(0, 1fr));}
+    }
+}

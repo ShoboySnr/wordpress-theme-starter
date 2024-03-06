@@ -1,0 +1,54 @@
+{
+    "key": "group_629304826e5ed",
+    "title": "Block - Spacer",
+    "fields": [
+        {
+            "key": "field_629304887f883",
+            "label": "Spacer Size",
+            "name": "spacer_size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "xs": "Extra Small (16px desktop, 8px mobile)",
+                "sm": "Small (24px desktop, 12px mobile)",
+                "md": "Medium (32px desktop, 16px mobile)",
+                "lg": "Large (48px desktop, 24px mobile)",
+                "xl": "Extra Large (64px desktop, 32px mobile)"
+            },
+            "default_value": [
+                "md"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/spacer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1653802211
+}

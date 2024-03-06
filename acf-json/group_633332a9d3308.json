@@ -1,0 +1,66 @@
+{
+    "key": "group_633332a9d3308",
+    "title": "Block Spacing",
+    "fields": [
+        {
+            "key": "field_633332ab54a4a",
+            "label": "Space Above",
+            "name": "spacing_size",
+            "type": "button_group",
+            "instructions": "Adds a variable amount of space above the block. This setting will have no effect on the first block within a container.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "xs": "XS",
+                "sm": "SM",
+                "md": "MD",
+                "lg": "LG",
+                "xl": "XL"
+            },
+            "default_value": "md",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/section"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/divider"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/spacer"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/column"
+            }
+        ]
+    ],
+    "menu_order": -1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1664838826
+}

@@ -1,0 +1,43 @@
+@use 'helpers' as *;
+
+.block-image-gallery{
+    display: grid;
+    grid-gap: 1rem;
+    @include maxBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr)); grid-gap: .5rem;}
+
+    a[data-fslightbox]{
+        display: block;
+        position: relative;
+        padding-top: 100%;
+
+        .overlay{
+            @include fullAbsolute(-1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            background: #000;
+            mix-blend-mode: multiply;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity .3s, visibility .3s;
+
+            button{
+                pointer-events: none;
+            }
+        }
+
+        &:hover{
+            .overlay{
+                opacity: .5;
+                visibility: visible;
+                z-index: 2;
+            }
+        }
+
+        .gallery-image{
+            @include fullAbsolute;
+            object-fit: cover;
+        }
+    }
+}

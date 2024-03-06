@@ -1,0 +1,72 @@
+@use 'helpers' as *;
+@use 'acf';
+@use 'core';
+
+.white-text-wrapper{
+    color: white;
+        
+    h1,h2,h3,h4,h5,h6,p,li,
+    .block-wysiwyg a, 
+    .block-core-paragraph a,
+    .wp-block-paragraph a, 
+    .block-core-heading a,
+    .wp-block-heading a, 
+    .block-core-list a, 
+    .wp-block-list a,
+    .block-core-table a,
+    .wp-block-table a, 
+    .block-accordions-content a{
+        color: white;
+    }
+
+    .block-wysiwyg a, 
+    .block-core-paragraph a,
+    .wp-block-paragraph a, 
+    .block-core-heading a,
+    .wp-block-heading a, 
+    .block-core-list a, 
+    .wp-block-list a,
+    .block-core-table a,
+    .wp-block-table a, 
+    .block-accordions-content a{
+        text-decoration: underline;
+
+        &:hover{
+            color: rgba(255,255,255,.75);
+        }
+    }
+
+    .theme-form-wrap .gform_wrapper.gravity-theme .gform_fields .gfield .gfield_label{
+        color: white;
+    }
+
+    .block-wrapper:not(.white-text-wrapper),
+    .block-column:not(.white-text-wrapper){
+        color: $body_font_color;
+        
+        h1,h2,h3,h4,h5,h6{
+            color: $heading_font_color;
+        }
+
+        p,li{
+            color: $body_font_color;
+        }
+
+        .block-wysiwyg a, 
+        .block-core-paragraph a,
+        .wp-block-paragraph a, 
+        .block-core-heading a,
+        .wp-block-heading a, 
+        .block-core-list a, 
+        .wp-block-list a,
+        .block-core-table a,
+        .wp-block-table a, 
+        .block-accordions-content a{
+                color: $color_link;
+            }
+
+        .theme-form-wrap .gform_wrapper.gravity-theme .gform_fields .gfield .gfield_label{
+            color: $body_font_color;
+        }
+    }
+}

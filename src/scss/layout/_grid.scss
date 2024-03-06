@@ -1,0 +1,149 @@
+@use 'helpers' as *;
+
+.d-grid{
+    display: grid;
+
+    &.gap-xs{
+        @include columnGap($gapXS);
+    }
+
+    &.gap-sm{
+        @include columnGap($gapSM);
+    }
+
+    &.gap-md{
+        @include columnGap($gapMD);
+    }
+
+    &.gap-lg{
+        @include columnGap($gapLG);
+    }
+    
+    &.gap-xl{
+        @include columnGap($gapXL);
+    }
+
+    &.cols-2{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr))};
+
+        &.collapse-tablet{
+            @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+        }
+
+        &.third{
+            @include minBreakpoint('sm'){grid-template-columns: minmax(0, 1fr) minmax(0, 2fr)};
+            &.collapse-tablet{
+                @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+            }
+        }
+
+        &.forty{
+            @include minBreakpoint('sm'){grid-template-columns: minmax(0, 4fr) minmax(0, 6fr)};
+                &.collapse-tablet{
+                @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+            }
+        }
+
+        &.sixty{
+            @include minBreakpoint('sm'){grid-template-columns: minmax(0, 6fr) minmax(0, 4fr)};
+            &.collapse-tablet{
+                @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+            }
+        }
+
+        &.two_thirds{
+            @include minBreakpoint('sm'){grid-template-columns: minmax(0, 2fr) minmax(0, 1fr)};
+            &.collapse-tablet{
+                @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+            }
+        }
+
+        &.reverse-mobile{
+            & > div:first-child{
+                @include maxBreakpoint('sm'){order: 1}
+            }
+
+            & > div:last-child{
+                @include maxBreakpoint('sm'){order: 0}
+            }
+
+            &.collapse-tablet{
+                & > div:first-child{
+                    @include maxBreakpoint('md'){order: 1}
+                }
+    
+                & > div:last-child{
+                    @include maxBreakpoint('md'){order: 0}
+                }
+            }
+        }
+    }
+
+    &.cols-3{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(3, minmax(0, 1fr))};
+        &.collapse-tablet{
+            @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+        }
+    }
+
+    &.cols-4{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr))};
+        @include minBreakpoint('md'){grid-template-columns: repeat(4, minmax(0, 1fr))};
+        &.collapse-tablet{
+            @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+        }
+    }
+
+    &.cols-5{
+        @include minBreakpoint('sm'){grid-template-columns: repeat(2, minmax(0, 1fr))};
+        @include minBreakpoint('md'){grid-template-columns: repeat(5, minmax(0, 1fr))};
+        &.collapse-tablet{
+            @include maxBreakpoint('md'){grid-template-columns: 1fr;}
+        }
+    }
+
+    &.cols-6{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        @include minBreakpoint('sm'){grid-template-columns: repeat(3, minmax(0, 1fr))};
+        @include minBreakpoint('md'){grid-template-columns: repeat(6, minmax(0, 1fr))};
+        &.collapse-tablet{
+            @include maxBreakpoint('md'){grid-template-columns: repeat(2, minmax(0, 1fr));}
+        }
+    }
+}
+
+.d-flex{
+    display: flex;
+}
+
+.jc-start{
+    justify-content: start;
+}
+
+.jc-end{
+    justify-content: end;
+}
+
+.jc-center{
+    justify-content: center;
+}
+
+.jc-sb{
+    justify-content: space-between;
+}
+
+.ai-start{
+    align-items: start;
+}
+
+.ai-end{
+    align-items: end;
+}
+
+.ai-stretch{
+    align-items: stretch;
+}
+
+.ai-center{
+    align-items: center;
+}

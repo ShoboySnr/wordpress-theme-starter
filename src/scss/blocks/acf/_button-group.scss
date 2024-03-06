@@ -1,0 +1,25 @@
+@use 'helpers' as *;
+
+.block-button-group{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    @include minBreakpoint('sm'){flex-direction: row; align-items: center;}
+
+    &.align-center{
+        align-items: center;
+        @include minBreakpoint('sm'){justify-content: center;}
+    }
+
+    &.align-right{
+        align-items: end;
+        @include minBreakpoint('sm'){justify-content: flex-end;}
+    }
+
+    a:not(:first-child),
+    button:not(:first-child){
+        margin-top: .625rem;
+        display: inline-block;
+        @include minBreakpoint('sm'){margin-left: .625rem; margin-top: 0;}
+    }
+}

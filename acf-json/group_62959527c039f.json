@@ -1,0 +1,179 @@
+{
+    "key": "group_62959527c039f",
+    "title": "Block - Columns",
+    "fields": [
+        {
+            "key": "field_62959547ef71a",
+            "label": "Columns Per Row",
+            "name": "number_of_columns",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6"
+            },
+            "allow_null": 0,
+            "default_value": 2,
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62d5f177bc70e",
+            "label": "Column Gap",
+            "name": "column_gap",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "xs": "XS",
+                "sm": "SM",
+                "md": "MD",
+                "lg": "LG",
+                "xl": "XL"
+            },
+            "allow_null": 0,
+            "default_value": "md",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62d5f074905b5",
+            "label": "Vertical Alignment",
+            "name": "vertical_alignment",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Start": "Start",
+                "Center": "Center",
+                "End": "End",
+                "Stretch": "Stretch"
+            },
+            "allow_null": 0,
+            "default_value": "Start",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62d5f08d905b6",
+            "label": "Two Column Layout",
+            "name": "two_column_layout",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62959547ef71a",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "third": "33% 66%",
+                "forty": "40% 60%",
+                "half": "50% 50%",
+                "sixty": "60% 40%",
+                "two_thirds": "66% 33%"
+            },
+            "allow_null": 0,
+            "default_value": "half",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_6303781e53e44",
+            "label": "Collapse at Tablet Breakpoint?",
+            "name": "collapse_tablet",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62d648d2debec",
+            "label": "Reverse on Mobile?",
+            "name": "reverse_on_mobile",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62959547ef71a",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/columns"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1661195510
+}

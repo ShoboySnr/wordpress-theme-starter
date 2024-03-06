@@ -1,0 +1,38 @@
+@use 'helpers' as *;
+
+.sticky-column{
+    @include minBreakpoint('md'){position: sticky !important; position: -webkit-sticky !important; z-index: 999; top: 80px;}
+    @include maxBreakpoint('md'){top: initial !important;}
+}
+
+.has-media-bg{
+    min-height: 15rem;
+    @include minBreakpoint('sm'){min-height: initial;}
+
+    &.collapse-tablet{
+        min-height: 15rem;
+        @include minBreakpoint('sm'){min-height: 20rem;}
+        @include minBreakpoint('md'){min-height: initial;}
+    }
+}
+
+.block-column{
+    &.collapse-tablet{
+        @include minBreakpoint('sm'){margin-top: 0;}
+    }
+
+    & > .full-link{
+        @include fullAbsolute(4);
+    }
+}
+
+.block-columns-row{
+
+    &.ai-stretch{
+
+        .block-column,
+        .block-column-content{
+            height: 100%;
+        }
+    }
+}

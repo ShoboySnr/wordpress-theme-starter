@@ -1,0 +1,54 @@
+@use 'helpers' as *;
+
+.block-video-embed{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;
+
+    iframe,
+    video,
+    object,
+    embed{
+        @include fullAbsolute;
+    }
+}
+
+.lightbox-poster{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;
+    transition: box-shadow .3s;
+    box-shadow: 0 0 35px rgba(#000, .2);
+
+    .poster-img{
+        @include fullAbsolute(1);
+        object-fit: cover;
+        pointer-events: none;
+    }
+
+    .overlay{
+        @include fullAbsolute(2);
+        background: rgba(#000, .3);
+        transition: background .3s;
+        pointer-events: none;
+    }
+
+    &:hover{
+        .overlay{
+            background: rgba(#000, .75);
+        }
+    }
+
+    .play-button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        z-index: 3;
+        pointer-events: none;
+    }
+}

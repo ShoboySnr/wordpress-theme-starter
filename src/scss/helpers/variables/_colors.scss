@@ -1,0 +1,30 @@
+//Global Colors - update theme.json manually to display these colors in block options
+$colors : (
+    'white' : #FFFFFF,
+    'light-grey' : #DDDDDD,
+    'grey' : #808080,
+    'dark' : #212121,
+    'black' : #000000,
+    'blue' : #004E89,
+    'light-blue' : #6da8d4
+);
+
+//Font Colors
+$body_font_color: map-get($colors, 'dark');
+$heading_font_color: map-get($colors, 'black');
+
+//Background Colors
+$header_bg: map-get($colors, 'blue');
+$submenu_bg: map-get($colors, 'light-blue');
+$submenu_bg_hover: darken($submenu_bg, 5%);
+$mobile_nav_bg: map-get($colors, 'black');
+$footer_bg: map-get($colors, 'black');
+
+// Link Colors
+$color_link: map-get($colors, 'blue');
+$color_link_hover: lighten($color_link, 8%);
+$color_header_link: map-get($colors, 'white');
+$color_header_link_hover: map-get($colors, 'light-blue');
+$color_submenu_link: map-get($colors, 'white');
+$color_mobile_nav_link: map-get($colors, 'white');
+$color_footer: map-get($colors, 'white');

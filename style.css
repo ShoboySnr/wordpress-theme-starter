@@ -1,0 +1,17 @@
+/*
+Theme Name: _themename
+Theme URI: https://sessionwise.com
+Author: Ryan Fitzgerald
+Author URI: https://sessionwise.com
+Description: Starter theme for custom Sessionwise WordPress development.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: Responsive, blog, minimal
+*/
+
+
+.my-services .wp-block-column:last-of-type {
+    display: none;
+}
+

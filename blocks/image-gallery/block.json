@@ -1,0 +1,17 @@
+{
+    "name": "acf/image-gallery",
+    "title": "Image Gallery",
+    "description": "",
+    "apiVersion": 2,
+    "category": "theme",
+    "ancestor": ["acf/section"],
+    "icon": "align-wide",
+    "acf": {
+        "renderTemplate": "image-gallery.php",
+        "mode": "preview"
+    },
+    "supports": {
+        "align"    : false,
+        "anchor"   : true
+    }
+}

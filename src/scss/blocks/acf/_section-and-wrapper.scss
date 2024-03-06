@@ -1,0 +1,24 @@
+@use 'helpers' as *;
+
+.block-section{
+
+    &.fit-to-screen{
+        min-height: max(calc(100vh - var(--header-height)), 30rem);
+    }
+
+    &.inside-page-hero{
+        min-height: max(50vh, 17.5rem);
+        @include minBreakpoint('md'){min-height: max(70vh, 20rem);}
+    }
+
+    .block-section-content{
+        max-width: $site_container_width;
+        width: 100%;
+        margin: 0 auto;
+        @include minBreakpoint('xl'){max-width: $site_container_width_xl;}
+    }
+}
+
+.block-wrapper{
+    @include maxBreakpoint('sm'){width: 100% !important;}
+}

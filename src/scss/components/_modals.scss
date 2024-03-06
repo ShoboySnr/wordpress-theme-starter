@@ -1,0 +1,88 @@
+@use 'helpers' as *;
+
+.custom-modal{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .5s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    grid-template-columns: 1fr;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
+    @include hiddenItem(fixed);
+    @include containerXPad;
+    @include containerYPad;
+
+    .custom-modal-inner{
+        background: #fff;
+        border-radius: .25rem;
+        box-shadow: 0 .625rem 1.5rem rgba(0,0,0,0.375);
+        padding: 2rem;
+        max-width: 45rem;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .custom-modal-close{
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        line-height: normal;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+
+        i{
+            font-size: 1.5rem;
+            opacity: .75;
+            pointer-events: none;
+        }
+
+        &:hover i{
+            opacity: 1;
+        }
+    }
+
+    
+    &.show{
+        z-index: 9999;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+
+    &.lightbox-modal{
+
+        .custom-modal-inner{
+            background: transparent;
+            max-width: 60rem;
+            position: relative;
+            padding: 0;
+        }
+
+        .custom-modal-close{
+            color: #fff;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0;
+            @include minBreakpoint('md'){top: 2rem; right: 2rem;}
+            @include minBreakpoint('md'){top: 3rem; right: 3rem;}
+    
+            img{
+                width: 1.5rem;
+                opacity: .75;
+                pointer-events: none;
+                transition: opacity .2s;
+            }
+    
+            &:hover img{
+                opacity: 1;
+            }
+        }
+    }
+}

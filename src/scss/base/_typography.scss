@@ -1,0 +1,182 @@
+@use 'helpers' as *;
+
+body{
+    font-family: $body_font;
+    font-size: $body_font_size;
+    line-height: $body_font_line_height;
+    color: $body_font_color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family:$heading_font;
+    color: $heading_font_color;
+    font-weight: $heading_font_weight;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    @include minBreakpoint('sm'){margin: 0 0 1.5rem;}
+}
+
+h1{
+	font-size: 3rem;
+    @include minBreakpoint('sm'){font-size: 4rem;}
+    @include minBreakpoint('md'){font-size: 4.5rem;}
+}
+
+h2{
+	font-size: 2.25rem;
+    @include minBreakpoint('sm'){font-size: 3.25rem;}
+}
+
+h3{
+	font-size: 1.75rem;
+    @include minBreakpoint('sm'){font-size: 2.75rem;}
+}
+
+h4{
+	font-size: 1.5rem;
+    @include minBreakpoint('sm'){font-size: 2rem;}
+}
+
+h5{
+	font-size: 1.25rem;
+    @include minBreakpoint('sm'){font-size: 1.5rem;}
+}
+
+h6{
+	font-size: 1rem;
+    @include minBreakpoint('sm'){font-size: 1.25rem;}
+}
+
+ul,ol{
+    margin: 1.5rem 0;
+    padding: 0 0 0 2rem;
+    @include minBreakpoint('sm'){padding: 0 0 0 2.5rem; margin: 2.5rem 0;}
+
+    li{
+        margin-bottom: .75rem;
+
+        ul{
+            margin: 1.25rem 0;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+p{
+    &:not(:last-child){margin-bottom: $paragraph_margin_bottom;}
+}
+
+a{
+    color: $color_link;
+    transition: all .2s;
+    text-decoration: none;
+
+    @include minBreakpoint('sm'){
+        &:hover{
+        color: $color_link_hover;
+        }
+    }
+}
+
+blockquote{
+    padding: .625rem 1.25rem;
+    border-left: 5px solid #E2E2E2;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    @include minBreakpoint('sm'){margin-top: 2rem; margin-bottom: 2rem;}
+}
+
+hr{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    @include minBreakpoint('sm'){margin-top: 2rem; margin-bottom: 2rem;}
+    @include minBreakpoint('md'){margin-top: 3rem; margin-bottom: 3rem;}
+}
+
+//Helper Classes
+@each $color, $value in $colors{
+    .text-#{$color}{
+        color: $value !important;
+    }
+}
+
+@each $font,
+$value in $fonts {
+    .text-#{$font} {
+        font-family: $value !important;
+    }
+}
+
+.text-left{
+    text-align: left !important;
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.text-right{
+    text-align: right !important;
+}
+
+.mobile-text-left{
+    @include maxBreakpoint('sm'){text-align: left !important;}
+}
+
+.mobile-text-center{
+    @include maxBreakpoint('sm'){text-align: center !important;}
+}
+
+.mobile-text-right{
+    @include maxBreakpoint('sm'){text-align: right !important;}
+}
+
+.text-uppercase{
+    text-transform: uppercase !important;
+}
+
+.text-italic{
+    font-style: italic !important;
+}
+
+.font-900{
+    font-weight: 900 !important;
+}
+
+.font-700{
+    font-weight: 700 !important;
+}
+
+.font-600{
+    font-weight: 600 !important;
+}
+
+.font-500{
+    font-weight: 500 !important;
+}
+
+.font-400{
+    font-weight: 400 !important;
+}
+
+.font-300{
+    font-weight: 300 !important;
+}
+
+.text-sm,
+.has-small-font-size,
+.has-small-font-size li{
+    font-size: 1rem !important;
+}
+
+.text-lg,
+.has-large-font-size,
+.has-large-font-size li{
+    font-size: 1.25rem !important;
+}

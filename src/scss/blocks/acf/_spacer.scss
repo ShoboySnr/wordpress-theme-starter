@@ -1,0 +1,55 @@
+@use 'helpers' as *;
+
+.block-spacer{
+
+    &.xs{
+        @each $size, $val in $spaceXS{
+            @if $size == 'mobile'{
+                height: $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){height: $val !important;}
+            }
+        }
+    }
+    &.sm{
+        @each $size, $val in $spaceSM{
+            @if $size == 'mobile'{
+                height: $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){height: $val !important;}
+            }
+        } 
+    }
+    &.md{
+        @each $size, $val in $spaceMD{
+            @if $size == 'mobile'{
+                height: $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){height: $val !important;}
+            }
+        }
+    }
+    &.lg{
+        @each $size, $val in $spaceLG{
+            @if $size == 'mobile'{
+                height: $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){height: $val !important;}
+            }
+        }
+    }
+    &.xl{
+        @each $size, $val in $spaceXL{
+            @if $size == 'mobile'{
+                height: $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){height: $val !important;}
+            }
+        }
+    }
+}

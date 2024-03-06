@@ -1,0 +1,201 @@
+@use 'variables' as *;
+
+//Media Queries
+@mixin minBreakpoint($minBreakpoint) {
+    // Retrieves the value from the key
+    $value: map-get($minBreakpoints, $minBreakpoint);
+  
+    // If the key exists in the map
+    @if $value != null {
+      // Prints a media query based on the value
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+  
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$minBreakpoint}`. "
+            + "Please make sure it is defined in `$minBreakpoints` map.";
+    }
+}
+
+@mixin maxBreakpoint($minBreakpoint) {
+    // Retrieves the value from the key
+    $value: map-get($minBreakpoints, $minBreakpoint);
+  
+    // If the key exists in the map
+    @if $value != null {
+      // Prints a media query based on the value
+        @media screen and (max-width: ($value - .02)) {
+            @content;
+        }
+    }
+  
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$minBreakpoint}`. "
+            + "Please make sure it is defined in `$minBreakpoints` map.";
+    }
+}
+
+@mixin button($bg, $color, $border, $hover_bg, $hover_color, $hover_border){
+    color: $color;
+    background: $bg;
+    border: $border;
+
+    &:hover{
+        color: $hover_color;
+        background: $hover_bg;
+        border: $hover_border;
+    }
+}
+
+//Button Sizes and Styles
+@mixin defaultButton{
+    @each $size, $val in $ctaPad{
+        @if $size == 'mobile'{
+            padding: $val;
+        }
+        @else{
+            @include minBreakpoint($size){padding: $val;}
+        }
+    }
+    @each $size, $val in $cta_font_size{
+        @if $size == 'mobile'{
+            font-size: $val;
+        }
+        @else{
+            @include minBreakpoint($size){font-size: $val;}
+        }
+    }
+}
+
+@mixin smButton{
+    @each $size, $val in $ctaPad_sm{
+        @if $size == 'mobile'{
+            padding: $val;
+        }
+        @else{
+            @include minBreakpoint($size){padding: $val;}
+        }
+    }
+    @each $size, $val in $cta_font_size_sm{
+        @if $size == 'mobile'{
+            font-size: $val;
+        }
+        @else{
+            @include minBreakpoint($size){font-size: $val;}
+        }
+    }
+}
+
+//Spacing Mixins
+@mixin pad($map){
+    @each $size, $val in $map{
+        @if $size == 'mobile'{
+            padding: $val;
+        }
+        @else{
+            @include minBreakpoint($size){padding: $val;}
+        }
+    }
+}
+
+@mixin containerXPad($important: false){
+    @each $size, $val in $xPad{
+        @if $size == 'mobile'{
+            padding-left: $val if($important, !important, null);
+            padding-right: $val if($important, !important, null);
+        }
+        @else{
+            @include minBreakpoint($size){padding-left: $val if($important, !important, null); padding-right: $val if($important, !important, null);}
+        }
+    }
+}
+
+@mixin containerYPad($important: false){
+    @each $size, $val in $yPad{
+        @if $size == 'mobile'{
+            padding-top: $val if($important, !important, null);
+            padding-bottom: $val if($important, !important, null);
+        }
+        @else{
+            @include minBreakpoint($size){padding-top: $val if($important, !important, null); padding-bottom: $val if($important, !important, null);}
+        }
+    }
+}
+
+@mixin columnGap($map){
+    @each $size, $val in $map{
+        @if $size == 'mobile'{
+            gap: $val;
+        }
+        @else{
+            @include minBreakpoint($size){gap: $val;}
+        }
+    }
+}
+
+@mixin spaceTop($map){
+    @each $size, $val in $map{
+        @if $size == 'mobile'{
+            margin-top: $val;
+        }
+        @else{
+            @include minBreakpoint($size){margin-top: $val;}
+        }
+    }
+}
+
+
+//Element Positioning
+@mixin hiddenItem($pos: absolute){
+    position: $pos;
+    transform: translateX(-100vw);
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+@mixin fullAbsolute($z: 1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z;
+}
+
+@mixin coverImg($z: 1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $z;
+    object-fit: cover;
+}
+
+@mixin absoluteCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin defaultInputStyling{
+    border-width: 1px;
+    border-color: #F5F5F5;
+    border-style: solid;
+    background: #F5F5F5;
+    padding: .5rem .75rem;
+    border-radius: 0;
+    font-size: 1rem;
+
+    &:focus,
+    &:active{
+        border-color: cornflowerblue;
+        outline: none;
+    }
+}

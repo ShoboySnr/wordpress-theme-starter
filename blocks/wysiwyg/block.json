@@ -1,0 +1,17 @@
+{
+    "name": "acf/wysiwyg",
+    "title": "WYSIWYG",
+    "description": "",
+    "apiVersion": 2,
+    "category": "theme",
+    "ancestor": ["acf/section"],
+    "icon": "text",
+    "acf": {
+        "renderTemplate": "wysiwyg.php",
+        "mode": "preview"
+    },
+    "supports": {
+        "align"    : false,
+        "anchor"   : true
+    }
+}

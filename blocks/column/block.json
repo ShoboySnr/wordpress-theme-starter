@@ -1,0 +1,17 @@
+{
+    "name": "acf/column",
+    "title": "Column",
+    "description": "",
+    "apiVersion": 2,
+    "category": "theme",
+    "parent": ["acf/columns"],
+    "icon": "tablet",
+    "acf": {
+        "renderTemplate": "column.php",
+        "mode": "preview"
+    },
+    "supports": {
+        "align"    : false,
+        "anchor"   : true
+    }
+}

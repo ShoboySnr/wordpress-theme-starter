@@ -1,0 +1,12 @@
+@use 'helpers' as *;
+@use 'heading';
+@use 'list';
+@use 'paragraph';
+
+.block-core-paragraph,
+.block-core-list,
+.block-core-heading{
+    &:not(:first-child){
+        @include spaceTop($spaceSM);
+    }
+}

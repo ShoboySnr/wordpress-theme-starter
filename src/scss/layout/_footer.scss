@@ -1,0 +1,16 @@
+@use 'helpers' as *;
+
+.site-footer{
+    width: 100%;
+    background: $footer_bg;
+    @include containerXPad;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .footer-inner{
+        margin: 0 auto;
+        color: $color_footer;
+        max-width: $site_container_width;
+        @include minBreakpoint('xl'){max-width: $site_container_width_xl;}
+    }
+}

@@ -1,0 +1,185 @@
+{
+    "key": "group_62d667501895a",
+    "title": "Block - Divider",
+    "fields": [
+        {
+            "key": "field_62d66754fb1f3",
+            "label": "Color",
+            "name": "color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#CCC",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_62d66773fb1f4",
+            "label": "Height",
+            "name": "height",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_62f2b0d076d59",
+            "label": "Alignment",
+            "name": "alignment",
+            "type": "button_group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "center": "Center",
+                "right": "Right"
+            },
+            "allow_null": 0,
+            "default_value": "left",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62d66786fb1f5",
+            "label": "Max Width Units",
+            "name": "max_width_units",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "%": "%",
+                "px": "px"
+            },
+            "allow_null": 0,
+            "default_value": "%",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_62d66795fb1f6",
+            "label": "Max Width %",
+            "name": "max_width_percent",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62d66786fb1f5",
+                        "operator": "==",
+                        "value": "%"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 100,
+            "placeholder": "",
+            "prepend": "",
+            "append": "%",
+            "min": 0,
+            "max": 100,
+            "step": ""
+        },
+        {
+            "key": "field_62d667bafb1f7",
+            "label": "Max Width Pixels",
+            "name": "max_width_px",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62d66786fb1f5",
+                        "operator": "==",
+                        "value": "px"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 200,
+            "placeholder": "",
+            "prepend": "",
+            "append": "px",
+            "min": 0,
+            "max": 100,
+            "step": ""
+        },
+        {
+            "key": "field_62d66b10d1193",
+            "label": "Space Around?",
+            "name": "space_around",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/divider"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1660072206
+}

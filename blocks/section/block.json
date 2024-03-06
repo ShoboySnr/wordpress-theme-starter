@@ -1,0 +1,16 @@
+{
+    "name": "acf/section",
+    "title": "Section",
+    "description": "",
+    "category": "theme",
+    "icon": "align-full-width",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "section.php",
+        "mode": "preview"
+    },
+    "supports": {
+        "align"    : false,
+        "anchor"   : true
+    }
+}

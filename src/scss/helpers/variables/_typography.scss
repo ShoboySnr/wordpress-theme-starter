@@ -1,0 +1,23 @@
+//Gloabl Fonts
+$fonts : (
+    'raleway' : ('Raleway', sans-serif),
+);
+
+//Body Font
+$body_font: map-get($fonts, 'raleway');
+$body_font_size: 1.125rem;
+$body_font_line_height: 1.6;
+
+//Heading Font
+$heading_font: map-get($fonts, 'raleway');
+$heading_font_weight: 700;
+
+//Button Font
+$cta_font: map-get($fonts, 'raleway');
+
+//Paragraph Margin
+$paragraph_margin_bottom: 1.5rem;
+
+//Main Navigation
+$main_nav_font_size: 1rem;
+$mobile_nav_font_size: 1.1rem;

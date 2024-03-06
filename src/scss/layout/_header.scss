@@ -1,0 +1,45 @@
+@use 'helpers' as *;
+
+.site-header{
+    background-color: $header_bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    @include containerXPad;
+}
+
+.header-inner{
+    max-width: $site_container_width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    @include minBreakpoint('xl'){max-width: $site_container_width_xl;}
+
+    .site-logo{
+        line-height: 1;
+        display: block;
+        width: 100%;
+        margin-right: 1.5rem;
+        @each $size, $val in $logoSizes{
+            @if $size == 'mobile'{
+                flex: 0 1 $val !important;
+            }
+            @else{
+                @include minBreakpoint($size){flex: 0 1 $val !important;}
+            }
+        }
+
+        img, span{
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-right: 1.25rem;
+            @include minBreakpoint('md'){margin-right: 1.5rem;}
+            @include minBreakpoint('lg'){margin-right: 2rem;}
+        }
+    }
+}
