@@ -1,4 +1,4 @@
-# Sessionwise Starter Theme
+# WordPress Starter Theme
 
 A lightweight theme using Advanced Custom Fields Pro and ACF Blocks
 
